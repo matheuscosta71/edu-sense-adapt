@@ -15,14 +15,14 @@ interface SensorDashboardProps {
 
 export const SensorDashboard = ({ sensorData }: SensorDashboardProps) => {
   const getStatusColor = (value: number, thresholds: [number, number]) => {
-    if (value >= thresholds[1]) return 'text-green-600 bg-green-50';
-    if (value >= thresholds[0]) return 'text-yellow-600 bg-yellow-50';
-    return 'text-red-600 bg-red-50';
+    if (value >= thresholds[1]) return 'text-primary bg-primary/10 border border-primary/20';
+    if (value >= thresholds[0]) return 'text-yellow-400 bg-yellow-400/10 border border-yellow-400/20';
+    return 'text-red-400 bg-red-400/10 border border-red-400/20';
   };
 
   const getStatusIcon = (value: number, thresholds: [number, number]) => {
-    if (value >= thresholds[1]) return <CheckCircle className="h-5 w-5 text-green-600" />;
-    return <AlertCircle className="h-5 w-5 text-yellow-600" />;
+    if (value >= thresholds[1]) return <CheckCircle className="h-5 w-5 text-primary" />;
+    return <AlertCircle className="h-5 w-5 text-yellow-400" />;
   };
 
   const metrics = [
@@ -64,7 +64,7 @@ export const SensorDashboard = ({ sensorData }: SensorDashboardProps) => {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <h3 className="text-2xl font-bold text-foreground">Monitoramento em Tempo Real</h3>
-        <div className="text-sm text-muted-foreground">
+        <div className="text-sm text-muted-foreground bg-muted px-3 py-1 rounded-lg">
           Última atualização: {sensorData.lastUpdate}
         </div>
       </div>
@@ -73,27 +73,27 @@ export const SensorDashboard = ({ sensorData }: SensorDashboardProps) => {
         {metrics.map((metric, index) => {
           const Icon = metric.icon;
           return (
-            <div key={index} className="bg-card rounded-xl p-6 shadow-lg border border-border hover:shadow-xl transition-all duration-300">
+            <div key={index} className="bg-card rounded-xl p-6 shadow-lg border border-border hover:shadow-xl transition-all duration-300 hover:border-primary/30">
               <div className="flex items-center justify-between mb-4">
                 <Icon className="h-8 w-8 text-primary" />
                 {getStatusIcon(metric.value, metric.thresholds)}
               </div>
               
-              <div className="space-y-2">
+              <div className="space-y-3">
                 <h4 className="text-sm font-medium text-muted-foreground">{metric.label}</h4>
                 <div className="text-3xl font-bold text-foreground">
                   {metric.value}
                   <span className="text-lg text-muted-foreground ml-1">{metric.unit}</span>
                 </div>
                 
-                <div className="w-full bg-muted rounded-full h-2">
+                <div className="w-full bg-muted rounded-full h-3">
                   <div 
-                    className="bg-gradient-to-r from-primary to-secondary h-2 rounded-full transition-all duration-500"
+                    className="bg-gradient-to-r from-primary to-accent h-3 rounded-full transition-all duration-500"
                     style={{ width: `${Math.min(metric.value, 100)}%` }}
                   ></div>
                 </div>
                 
-                <p className={`text-xs px-2 py-1 rounded-md ${getStatusColor(metric.value, metric.thresholds)}`}>
+                <p className={`text-xs px-3 py-2 rounded-md ${getStatusColor(metric.value, metric.thresholds)}`}>
                   {metric.recommendation}
                 </p>
               </div>
@@ -107,7 +107,7 @@ export const SensorDashboard = ({ sensorData }: SensorDashboardProps) => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="bg-primary/10 p-4 rounded-lg border border-primary/20">
             <h5 className="font-semibold text-primary mb-2">💡 Iluminação</h5>
-            <p className="text-sm text-foreground">
+            <p className="text-sm text-card-foreground">
               {sensorData.lightLevel > 400 
                 ? "Ambiente com iluminação ideal para estudos prolongados"
                 : "Recomendamos aumentar a iluminação para melhor concentração"
@@ -115,9 +115,9 @@ export const SensorDashboard = ({ sensorData }: SensorDashboardProps) => {
             </p>
           </div>
           
-          <div className="bg-secondary/10 p-4 rounded-lg border border-secondary/20">
-            <h5 className="font-semibold text-secondary mb-2">🧠 Concentração</h5>
-            <p className="text-sm text-foreground">
+          <div className="bg-accent/10 p-4 rounded-lg border border-accent/20">
+            <h5 className="font-semibold text-accent mb-2">🧠 Concentração</h5>
+            <p className="text-sm text-card-foreground">
               {sensorData.attentionScore > 75
                 ? "Seu nível de atenção está excelente para conteúdos complexos"
                 : "Considere técnicas de respiração para melhorar o foco"
@@ -125,9 +125,9 @@ export const SensorDashboard = ({ sensorData }: SensorDashboardProps) => {
             </p>
           </div>
           
-          <div className="bg-accent/10 p-4 rounded-lg border border-accent/20">
-            <h5 className="font-semibold text-accent-foreground mb-2">📊 Performance</h5>
-            <p className="text-sm text-foreground">
+          <div className="bg-secondary/10 p-4 rounded-lg border border-secondary/20">
+            <h5 className="font-semibold text-secondary-foreground mb-2">📊 Performance</h5>
+            <p className="text-sm text-card-foreground">
               {sensorData.studyEfficiency > 70
                 ? "Você está no seu melhor momento para aprender"
                 : "Uma pausa estratégica pode otimizar seu desempenho"
