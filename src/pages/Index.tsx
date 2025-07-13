@@ -49,7 +49,7 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
+    <div className="min-h-screen bg-gradient-to-br from-background via-card to-background">
       <Navigation activeTab={activeTab} setActiveTab={setActiveTab} />
       
       <main className="container mx-auto px-4 py-6">
