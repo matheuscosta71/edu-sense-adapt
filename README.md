@@ -1,73 +1,58 @@
-# Welcome to your Lovable project
+# 🧠 EduSense – Plataforma de Estudos Inteligente para a Medicina do Futuro
 
-## Project info
+**EduSense** é uma solução educacional inovadora que combina sensores vestíveis com uma plataforma de aprendizado adaptativo. Desenvolvido para estudantes da área da saúde, o sistema coleta dados do ambiente real — como níveis de luz, exposição a UV e estímulos visuais — para personalizar o plano de estudos e melhorar a performance e o bem-estar do aluno.
 
-**URL**: https://lovable.dev/projects/1b9b1ddf-dfc8-4884-8e96-0fbbd1b1e70f
+## 🚀 Objetivo
 
-## How can I edit this code?
+Criar uma nova forma de ensino médico, baseada em:
+- Dados reais da rotina do estudante
+- Personalização do aprendizado com apoio de IA
+- Conscientização sobre fadiga, ritmo circadiano e foco
+- Formação de médicos mais preparados, conscientes e humanos
 
-There are several ways of editing your application.
+## 🛠️ Tecnologias
 
-**Use Lovable**
+- **Microcontrolador:** ESP32-C3 (RISC-V, 160MHz)
+- **Sensores:**  
+  - Luz UV: GUVA-S12S  
+  - Gestos e RGB: APDS-9960
+- **Conectividade:** Wi-Fi 802.11 b/g/n, Bluetooth 5.0 LE
+- **Bateria:** Li-Po 3.7V, recarregável (160mAh)
+- **Interface:** USB-C
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/1b9b1ddf-dfc8-4884-8e96-0fbbd1b1e70f) and start prompting.
+## 📦 Componentes do Projeto
 
-Changes made via Lovable will be committed automatically to this repo.
+- 📟 Sensor vestível (óculos ou crachá)
+- 📲 Aplicativo com plano de estudos inteligente
+- 📊 Dashboard com feedback e dados em tempo real
+- 🧪 Módulo de simulação ou extensão educacional
 
-**Use your preferred IDE**
+## 💡 Aplicações
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- Ensino médico e técnico em saúde
+- Projetos de extensão e iniciação científica
+- Ambientes de simulação médica
+- Prevenção de burnout em estudantes
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 💰 Modelo de Negócio (em desenvolvimento)
 
-Follow these steps:
+- Licença institucional (universidades)
+- Assinatura individual para alunos
+- Cursos certificados com integração do sensor
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## 📍 Status
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+> 🔄 Em prototipagem | Procurando parceiros para testes e validação
 
-# Step 3: Install the necessary dependencies.
-npm i
+## 🤝 Contribua
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+Interessado em colaborar, testar ou melhorar a EduSense?  
+Entre em contato
 
-**Edit a file directly in GitHub**
+---
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+**Desenvolvido por:** Equipe EduSense
+🔗 LinkedIn: https://www.linkedin.com/in/matheus-costa-56a9481ab/
 
-**Use GitHub Codespaces**
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/1b9b1ddf-dfc8-4884-8e96-0fbbd1b1e70f) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+**Link Vercel:** https://edu-sense-adapt.vercel.app/
